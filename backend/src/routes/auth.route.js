@@ -7,13 +7,13 @@ const router = express.Router()
 router.post('/signUp',signUp)
 router.post('/login',login)
 router.post('/logout',logout)
-router.post('/onboard',protectRoute,onboard)
+router.put('/onboard',protectRoute,onboard)
 
 //forget password
 //send-reset-password-email
 
 //checking if user is logged in or not!!
-router.get('/me',protectRoute,(req,res)=>{
+router.get('/check',protectRoute,(req,res)=>{
     res.status(200).json({success:true,user:req.user})
 })
 
